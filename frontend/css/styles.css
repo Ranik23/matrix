@@ -1,15 +1,16 @@
 /* Фон для всего тела страницы */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-image: url('../assets/images/matrix_background.png');
+    background-image: linear-gradient(135deg, #1e1e2f, #3a3a5f);
     background-size: cover;
     background-position: center;
+    color: #f0f1f2;
 }
 
 /* Стили для шапки */
@@ -17,10 +18,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%; /* Увеличенная ширина */
+    width: 90%;
     max-width: 1200px;
     height: 150px;
-    background-color: #d0e6f7; /* Обычный светло-голубой цвет без прозрачности */
+    background-image: linear-gradient(135deg, #2e2e4f, #4a4a7f);
     margin-top: 20px;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -28,7 +29,6 @@ body {
     top: 0;
 }
 
-/* Контейнер для логотипа */
 .logo-container {
     position: absolute;
     left: 20px;
@@ -36,14 +36,13 @@ body {
     align-items: center;
 }
 
-/* Размер и стили логотипа */
 .logo {
     height: 100px;
     width: auto;
     border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Контейнер и стиль для текста в шапке */
 .title-container {
     text-align: center;
     flex-grow: 1;
@@ -51,16 +50,15 @@ body {
 
 .title {
     margin: 0;
-    font-size: 3rem; /* Увеличенный текст для шапки */
+    font-size: 3rem;
     font-weight: bold;
-    color: #003366;
+    color: #f0f1f2;
 }
-
 
 /* Стили для светло-серого блока */
 .button-wrapper {
     position: relative;
-    background-color: #f0f1f2;
+    background-color: #2e2e4f;
     border-radius: 20px;
     width: 90%;
     max-width: 1100px;
@@ -70,7 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden; /* Изменяем на hidden */
+    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     margin-bottom: 40px;
@@ -80,95 +78,57 @@ body {
 .inner-content {
     width: 100%;
     max-height: 100%;
-    overflow-y: auto; /* Скролл на внутреннем контейнере */
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px;
 }
 
-/* Дополнительные стили для внутреннего контента */
-.button-wrapper .menu-container,
-.button-wrapper .matrix-input-container {
-    margin-top: auto;
-    margin-bottom: auto;
+/* Стили для элементов результатов */
+.result-item {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
 }
 
-
-/* Убедитесь, что кнопка находится в центре */
-.button-container {
-    display: flex; /* Flexbox для центрирования */
-    justify-content: center;
-    align-items: center;
-}
-
-/* Стили для кнопки */
-.start-button {
-    padding: 30px 70px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(135deg, #4ba3c3, #0066cc);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-family: 'Poppins', Arial, sans-serif;
-}
-
-/* Эффект при наведении на кнопку */
-.start-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-}
-
-/* Эффект при нажатии на кнопку */
-.start-button:active {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #0066cc, #4ba3c3);
-}
-
-/* Стили для меню */
-.menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Расстояние между элементами */
-}
-
-.menu-item {
+.result-item p {
     font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #f0f1f2;
 }
 
-.menu-item label {
+.result-item h3 {
+    font-size: 1.5rem;
+    color: #f0f1f2;
+    margin-bottom: 10px;
+}
+
+.result-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-item ul li {
+    font-size: 1.2rem;
+    color: #f0f1f2;
     margin-bottom: 5px;
 }
 
-.menu-item select {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
-
-/* Стили для кнопки "Далее" */
+/* Стили для кнопки "Главная" */
 .next-button {
     padding: 15px 50px;
     font-size: 1.5rem;
     font-weight: bold;
     color: #ffffff;
-    background: linear-gradient(135deg, #4ba3c3, #0066cc);
+    background: linear-gradient(135deg, #ff6f61, #ff3b2f);
     border: none;
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     font-family: 'Poppins', Arial, sans-serif;
+    margin-top: 20px;
 }
 
 .next-button:hover {
@@ -179,251 +139,7 @@ body {
 .next-button:active {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #0066cc, #4ba3c3);
-}
-
-/*Полином*/
-
-
-.menu-item {
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.matrix-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Сетка для матрицы */
-#matrix-container {
-    display: grid;
-    gap: 8px; /* Отступы между числами */
-}
-
-#coefficient-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-#coefficient-entry-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-
-#coefficient-container input {
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#coefficient-display-container p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-/* Контейнер с границей для матрицы */
-/* Сетка для матрицы с отступами между ячейками */
-.matrix-border {
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    display: grid;
-    gap: 10px; /* Отступы между ячейками */
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-/* Стили для полей ввода чисел в матрице */
-.matrix-border input {
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Стиль для выбора размера матрицы на одной строке */
-.matrix-size-selection {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    gap: 5px;
-}
-
-.select-container {
-    display: inline-flex; /* Чтобы элементы выбора и '×' были на одной строке */
-    align-items: center;
-    gap: 5px;
-}
-
-.matrix-size-selection label,
-.select-container span {
-    white-space: nowrap;
-}
-
-.select-container select {
-    padding: 5px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #333;
-    width: 50px;
-    text-align: center;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-/* Стили для поля ввода степени полинома */
-#polynomial-degree {
-    font-size: 1.2rem; /* Увеличение размера текста */
-    width: 50px; /* Ширина для улучшенной видимости */
-    height: 25px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-/* Стили для ввода коэффициентов */
-#coefficient-input {
-    font-size: 1.2rem; /* Увеличение размера текста */
-    width: 50px;
-    height: 25px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-
-.matrix-title {
-    text-align: center;
-    font-size: 1.2rem; /* Можно изменить размер, если нужно */
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* Стили для контейнера ввода коэффициентов линейной формы */
-#linear-coefficient-entry-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Стили для отображения введённых коэффициентов линейной формы */
-#linear-coefficient-display-container {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0;
-}
-
-/* Стили для поля ввода коэффициентов линейной формы */
-#linear-coefficient-input {
-    font-size: 1.2rem; /* Увеличение размера текста */
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-
-.polynomial-generation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.matrix-size-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-.input-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.input-container input[type="number"] {
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.input-container input[type="number"],
-#polynomial-degree-generate {
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.matrix-count-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-.matrix-count-input input[type="number"] {
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-button.next-button {
-    display: block;
-    margin: 0 auto;
-}
-
-.linear-form-generation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
-}
-
-#home-button-container {
-    position: absolute;
-    bottom: 20px; /* Расстояние от нижнего края серого блока */
-    width: 100%;
-    text-align: center;
+    background: linear-gradient(135deg, #ff3b2f, #ff6f61);
 }
 
 /* Контейнер для матрицы на странице результатов */
@@ -435,51 +151,266 @@ button.next-button {
     margin: 20px 0;
 }
 
-/* Прямоугольный блок для всей матрицы */
 .result-matrix-border {
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #4a4a7f;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 }
 
-/* Таблица для матрицы */
 .result-matrix-border table {
     border-collapse: collapse;
     margin: auto;
 }
 
-/* Ячейки матрицы */
 .result-matrix-border td {
     text-align: center;
     padding: 10px;
     border: 1px solid #ddd;
     font-size: 1rem;
-    background-color: #ffffff;
+    background-color: #f0f1f2;
     color: #333;
     border-radius: 5px;
-    width: 60px; /* Устанавливаем фиксированную ширину */
-    height: 50px; /* Устанавливаем фиксированную высоту */
+    width: 60px;
+    height: 50px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Ячейки при наведении */
 .result-matrix-border td:hover {
     background-color: #e6f7ff;
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
-/* Центрирование заголовков */
 .result-matrix-title {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #f0f1f2;
 }
 
-/* Оверлей для загрузки */
+.start-button {
+    padding: 30px 70px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff6f61, #ff3b2f);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.start-button:active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff3b2f, #ff6f61);
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #3a3a5f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f0f1f2;
+}
+
+.menu-item label {
+    margin-bottom: 5px;
+}
+
+.menu-item select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #4a4a7f;
+    color: #f0f1f2;
+}
+
+/* Стили для кнопки "Calculate" */
+.next-button {
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff6f61, #ff3b2f);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.next-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.next-button:active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff3b2f, #ff6f61);
+}
+
+/* Контейнер для матрицы */
+.matrix-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Автоматически подстраивается под размеры */
+    gap: 10px; /* Отступы между ячейками */
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Стили для ячеек матрицы */
+.matrix-container input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f1f2;
+    color: #333;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стили при наведении на ячейку */
+.matrix-container input:hover {
+    background-color: #e6f7ff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Стили для выбора размера матрицы */
+.matrix-size-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.matrix-size-selection select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #4a4a7f;
+    color: #f0f1f2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.matrix-size-selection select:hover {
+    background-color: #3a3a5f;
+}
+
+.select-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.select-container select {
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    width: 50px;
+    text-align: center;
+    background-color: #4a4a7f;
+    color: #f0f1f2;
+}
+
+#polynomial-degree {
+    font-size: 1.2rem;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f0f1f2;
+    color: #333;
+}
+
+#coefficient-input {
+    font-size: 1.2rem;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f0f1f2;
+    color: #333;
+}
+
+.result-matrix-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.result-matrix-border {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #4a4a7f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-matrix-border table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.result-matrix-border td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #f0f1f2;
+    color: #333;
+    border-radius: 5px;
+    width: 60px;
+    height: 50px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.result-matrix-border td:hover {
+    background-color: #e6f7ff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.result-matrix-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f0f1f2;
+}
+
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -495,7 +426,6 @@ button.next-button {
     z-index: 1000;
 }
 
-/* Анимация спиннера */
 .spinner {
     border: 8px solid rgba(255, 255, 255, 0.3);
     border-top: 8px solid white;
@@ -505,7 +435,6 @@ button.next-button {
     animation: spin 1s linear infinite;
 }
 
-/* Анимация вращения */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -514,4 +443,3 @@ button.next-button {
         transform: rotate(360deg);
     }
 }
-

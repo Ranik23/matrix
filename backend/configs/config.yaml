@@ -6,4 +6,4 @@ app:
 logging:
   level: "info"
   format: "json"
-  file: "logs/app.log"
+  file: "D:/edu/Matrix/matrix/backend/logs/app.log"
