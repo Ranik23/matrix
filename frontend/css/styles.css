@@ -115,31 +115,28 @@ body {
     margin-bottom: 5px;
 }
 
-/* Стили для кнопки "Главная" */
+/* Стили для кнопки "Further" */
 .next-button {
-    padding: 15px 50px;
-    font-size: 1.5rem;
+    padding: 15px 30px; /* Уменьшаем отступы для более компактного вида */
+    font-size: 1.4rem; /* Уменьшаем размер текста */
     font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(135deg, #ff6f61, #ff3b2f);
-    border: none;
-    border-radius: 50px;
+    color: #ffffff; /* Белый текст */
+    background-color: #28a745; /* Однотонный зелёный фон */
+    border: none; /* Убираем границу */
+    border-radius: 8px; /* Скругляем углы */
     cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+    font-family: 'Roboto', sans-serif; /* Используем более простой шрифт */
 }
 
+/* Эффект при наведении на кнопку */
 .next-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    background-color: #218838; /* Темнее зелёный цвет при наведении */
 }
 
+/* Эффект при нажатии на кнопку */
 .next-button:active {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ff3b2f, #ff6f61);
+    background-color: #1e7e34; /* Ещё темнее зелёный цвет при активации */
 }
 
 /* Контейнер для матрицы на странице результатов */
@@ -190,29 +187,28 @@ body {
     color: #f0f1f2;
 }
 
+/* Стили для кнопки "LAUNCH" */
 .start-button {
-    padding: 30px 70px;
-    font-size: 2.5rem;
+    padding: 20px 40px; /* Уменьшаем отступы для более компактного вида */
+    font-size: 1.8rem; /* Уменьшаем размер текста */
     font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(135deg, #ff6f61, #ff3b2f);
-    border: none;
-    border-radius: 50px;
+    color: #ffffff; /* Белый текст */
+    background-color: #007bff; /* Однотонный синий фон */
+    border: none; /* Убираем границу */
+    border-radius: 8px; /* Скругляем углы */
     cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-family: 'Poppins', Arial, sans-serif;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+    font-family: 'Roboto', sans-serif; /* Используем более простой шрифт */
 }
 
+/* Эффект при наведении на кнопку */
 .start-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    background-color: #0056b3; /* Темнее синий цвет при наведении */
 }
 
+/* Эффект при нажатии на кнопку */
 .start-button:active {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ff3b2f, #ff6f61);
+    background-color: #004080; /* Ещё темнее синий цвет при активации */
 }
 
 .menu-container {
@@ -245,33 +241,6 @@ body {
     font-size: 1rem;
     background-color: #4a4a7f;
     color: #f0f1f2;
-}
-
-/* Стили для кнопки "Calculate" */
-.next-button {
-    padding: 15px 50px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(135deg, #ff6f61, #ff3b2f);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-top: 20px;
-}
-
-.next-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-}
-
-.next-button:active {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ff3b2f, #ff6f61);
 }
 
 /* Контейнер для матрицы */

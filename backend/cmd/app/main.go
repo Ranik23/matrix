@@ -24,7 +24,7 @@ func init() {
 	gob.Register(entity.CalculationResult{})
 }
 func main() {
-	cfg, err := config.LoadConfig("D:/edu/Matrix/matrix/backend/configs/config.yaml")
+	cfg, err := config.LoadConfig("configs/config.yaml")
 	if err != nil {
 		log.Fatalf("Error loading config: %v", err)
 	}
@@ -37,10 +37,10 @@ func main() {
 	}
 	router := gin.Default()
 
-	router.Static("/assets", "D:/edu/Matrix/matrix/frontend/assets")
-	router.Static("/css", "D:/edu/Matrix/matrix/frontend/css")
-	router.Static("/js", "D:/edu/Matrix/matrix/frontend/js")
-	router.LoadHTMLGlob("D:/edu/Matrix/matrix/frontend/views/*")
+	router.Static("/assets", "../frontend/assets")
+	router.Static("/css", "../frontend/css")
+	router.Static("/js", "../frontend/js")
+	router.LoadHTMLGlob("../frontend/views/*")
 
 	// Хранилище для сессий (cookie-based)
 	store := cookie.NewStore([]byte("champ_and_anton_key"))

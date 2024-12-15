@@ -1137,3 +1137,28 @@
 2024/12/15 23:23:06 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
 2024/12/15 23:23:11 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
 2024/12/15 23:25:05 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
+2024/12/15 23:44:26 Configuration loaded
+2024/12/15 23:44:26 Starting the ProjMatrix server on 8080
+2024/12/15 23:44:52 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
+2024/12/15 23:45:57 Configuration loaded
+2024/12/15 23:45:57 Starting the ProjMatrix server on 8080
+2024/12/15 23:46:28 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
+2024/12/15 23:47:14 Processing of linear shape generation: {OperationType:generate-linear-form MatrixCount:1 MatrixSize:{Rows:3 Columns:3} Matrices:[] Coefficients:[]}
+2024/12/15 23:47:14 Error in processing calculations: %!w(*fmt.wrapError=&{the matrix linear form could not be calculated: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp [::1]:7000: connectex: No connection could be made because the target machine actively refused it." 0xc000254030})
+2024/12/15 23:47:14 Error in processing calculations: %!w(*fmt.wrapError=&{the matrix linear form could not be calculated: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp [::1]:7000: connectex: No connection could be made because the target machine actively refused it." 0xc000254030})
+2024/12/15 23:47:33 Configuration loaded
+2024/12/15 23:47:33 Starting the ProjMatrix server on 8080
+2024/12/15 23:49:21 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
+2024/12/15 23:57:02 Configuration loaded
+2024/12/15 23:57:02 Starting the ProjMatrix server on 8080
+2024/12/15 23:57:40 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
+2024/12/16 00:03:22 Configuration loaded
+2024/12/16 00:03:22 Starting the ProjMatrix server on 8080
+2024/12/16 00:08:54 Processing the manual input of a polynomial: {OperationType:manual-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[0 0 0 0 0 0 0 0 0] Degree:2 Coefficients:[]}
+2024/12/16 00:10:50 Configuration loaded
+2024/12/16 00:10:50 Starting the ProjMatrix server on 8080
+2024/12/16 00:11:15 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
+2024/12/16 00:12:12 Processing the manual input of a polynomial: {OperationType:manual-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[0 0 0 0 0 0 0 0 0] Degree:2 Coefficients:[]}
+2024/12/16 00:12:24 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
+2024/12/16 00:12:58 Processing the manual input of a polynomial: {OperationType:manual-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[0 0 0 0 0 0 0 0 0] Degree:2 Coefficients:[]}
+2024/12/16 00:13:07 Processing of polynomial generation: {OperationType:generate-polynomial MatrixSize:{Rows:3 Columns:3} Matrix:[] Degree:1 Coefficients:[]}
