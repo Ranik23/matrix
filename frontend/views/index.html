@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Computation App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<!-- Шапка страницы -->
+<div class="header">
+    <div class="logo-container">
+        <img src="../assets/images/logo.png" alt="App Logo" class="logo">
+    </div>
+    <div class="title-container">
+        <h1 class="title">Matrix Computation App</h1>
+    </div>
+</div>
+
+<!-- Светло-серый блок с кнопкой и меню -->
+<div class="button-wrapper" id="button-wrapper">
+    <div class="inner-content">
+        <div class="button-container" id="start-container">
+            <button class="start-button" onclick="showMenu()">START</button>
+        </div>
+
+        <!-- Меню выбора (скрыто изначально) -->
+        <div class="menu-container" id="menu-container" style="display: none;">
+            <div class="menu-item">
+                <label for="data-input">Заполнение данных:</label>
+                <select id="data-input">
+                    <option value="manual">Вручную</option>
+                    <option value="generate">Генерация</option>
+                </select>
+            </div>
+            <div class="menu-item">
+                <label for="calculation-type">Что будет вычислять:</label>
+                <select id="calculation-type">
+                    <option value="polynomial">Матричный полином</option>
+                    <option value="linear-form">Матричная линейная форма</option>
+                </select>
+            </div>
+            <button class="next-button" onclick="showMatrixInput()">Далее</button>
+        </div>
+
+        <!-- Форма ввода матрицы (скрыта изначально) -->
+        <div class="matrix-input-container" id="matrix-input-container" style="display: none;">
+            <!-- Контейнер с границей для матрицы -->
+            <div class="matrix-border">
+                <div id="matrix-container">
+                    <!-- Пример поля ввода для значений матрицы -->
+                    <input type="text" oninput="validateMatrixValue(this)" onblur="validateMatrixValue(this)" placeholder="0">
+                </div>
+            </div>
+
+            <!-- Выбор размера матрицы в одну строку -->
+            <div class="menu-item matrix-size-selection">
+                <span>Размер: </span>
+                <span class="select-container">
+                    <select id="matrix-rows" onchange="createMatrixInputs()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    <span>×</span>
+                    <select id="matrix-columns" onchange="createMatrixInputs()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </span>
+            </div>
+
+            <!-- Ввод степени полинома -->
+            <div class="menu-item" id="polynomial-degree-container">
+                <label for="polynomial-degree">Введите степень полинома (m):</label>
+                <input type="number" id="polynomial-degree" min="1" value="1" onblur="validatePolynomialDegree(this)">
+            </div>
+
+            <!-- Ввод коэффициентов -->
+            <div class="menu-item" id="coefficient-entry-container" style="display: none;">
+                <label id="coefficient-label">Введите a₀:</label>
+                <input type="text" id="coefficient-input" onkeydown="handleCoefficientEnter(event)" onblur="validateCoefficient(this)" value="1">
+            </div>
+
+            <!-- Контейнер для отображения введённых коэффициентов -->
+            <div class="menu-item" id="coefficient-display-container" style="display: none; text-align: center;"></div>
+
+            <!-- Кнопка Далее для полинома -->
+            <button class="next-button" onclick="submitPolynomialData()">Вычислить</button>
+        </div>
+
+        <!-- Поле для выбора количества матриц и кнопка Далее для линейной формы (скрыта изначально) -->
+        <div class="menu-item" id="matrix-count-selection" style="display: none;" onchange="resetLinearFormCoefficientInput()">
+            <label for="matrix-count">Количество матриц для заполнения:</label>
+            <select id="matrix-count" onchange="setupMatrixSizeSelection()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+
+        <!-- Выбор размера матриц для линейной формы -->
+        <div class="menu-item matrix-size-selection" id="linear-matrix-size-selection" style="display: none;">
+            <span>Размер матриц: </span>
+            <span class="select-container">
+                <select id="linear-matrix-rows" onchange="createMatrixFields()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+                <span>×</span>
+                <select id="linear-matrix-columns" onchange="createMatrixFields()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </span>
+        </div>
+
+        <!-- Контейнер для ввода матриц для линейной формы -->
+        <div id="matrix-input-fields-container" style="display: none;"></div>
+
+        <!-- Ввод коэффициентов для линейной формы, скрыт по умолчанию -->
+        <div class="menu-item" id="linear-coefficient-entry-container" style="display: none;">
+            <label id="linear-coefficient-label">Введите a₀:</label>
+            <input type="text" id="linear-coefficient-input" onkeydown="handleLinearCoefficientEnter(event)" onblur="validateCoefficient(this)" value="1">
+        </div>
+
+        <!-- Контейнер для отображения введённых коэффициентов для линейной формы -->
+        <div class="menu-item" id="linear-coefficient-display-container" style="display: none; text-align: center;"></div>
+
+        <!-- Кнопка Вычислить для линейной формы -->
+        <button class="next-button" id="linear-form-next-button" style="display: none;" onclick="submitLinearFormData()">Вычислить</button>
+
+        <!-- Форма генерации полинома (скрыта изначально) -->
+        <div class="polynomial-generation-container" id="polynomial-generation-container" style="display: none;">
+            <!-- Ввод размера матрицы -->
+            <div class="menu-item matrix-size-input">
+                <label>Введите размер матрицы:</label>
+                <div class="input-container">
+                    <input type="number" id="matrix-rows-generate" min="1" value="3" onblur="validatePositiveInteger(this)">
+                    <span>×</span>
+                    <input type="number" id="matrix-columns-generate" min="1" value="3" onblur="validatePositiveInteger(this)">
+                </div>
+            </div>
+
+            <!-- Ввод степени полинома -->
+            <div class="menu-item matrix-size-input">
+                <label for="polynomial-degree-generate">Введите степень полинома:</label>
+                <input type="number" id="polynomial-degree-generate" min="1" value="1" onblur="validatePositiveInteger(this)">
+            </div>
+
+            <!-- Кнопка для генерации данных -->
+            <button class="next-button" onclick="generatePolynomialData()">Сгенерировать</button>
+        </div>
+
+        <!-- Форма генерации матричной линейной формы (скрыта изначально) -->
+        <div class="linear-form-generation-container" id="linear-form-generation-container" style="display: none;">
+            <!-- Ввод количества матриц -->
+            <div class="menu-item matrix-count-input">
+                <label for="matrix-count-generate">Количество матриц для заполнения:</label>
+                <input type="number" id="matrix-count-generate" min="1" value="1" onblur="validatePositiveInteger(this)" autocomplete="off" />
+            </div>
+
+            <!-- Ввод размера матриц (строки и столбцы) -->
+            <div class="menu-item matrix-size-input">
+                <label>Введите размер матриц:</label>
+                <div class="input-container">
+                    <input type="number" id="matrix-rows-generate-linear" min="1" value="3" onblur="validatePositiveInteger(this)" autocomplete="off" />
+                    <span>×</span>
+                    <input type="number" id="matrix-columns-generate-linear" min="1" value="3" onblur="validatePositiveInteger(this)" autocomplete="off" />
+                </div>
+            </div>
+
+            <!-- Кнопка для генерации данных -->
+            <button class="next-button" onclick="generateLinearFormData()">Сгенерировать</button>
+        </div>
+
+
+        <!-- Индикатор загрузки -->
+        <div id="loading-overlay" class="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+            <p>Вычисления выполняются, пожалуйста, подождите...</p>
+        </div>
+    </div> <!-- Закрывающий тег для inner-content -->
+</div> <!-- Закрывающий тег для button-wrapper -->
+
+
+<script src="../js/menu.js"></script>
+<script src="../js/matrix.js"></script>
+<script src="../js/polynomial.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/hadler_data.js"></script>
+<script src="../js/linear.js"></script>
+
+</body>
+</html>
