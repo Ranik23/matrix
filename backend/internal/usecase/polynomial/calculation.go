@@ -29,8 +29,6 @@ func PolynomialCalculation(matrix, identityMatrix [][]float64, coefficients []fl
 			result[i][j] += coefficients[0] * identityMatrix[i][j]
 		}
 	}
-
-	// Временная матрица для хранения степеней матрицы A
 	currentPower := identityMatrix
 	var err error
 
